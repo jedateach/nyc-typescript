@@ -6,8 +6,9 @@
   "author": "Jeremy Shipman (https://jeremyshipman.com)",
   "license": "MIT",
   "scripts": {
-    "build": "npm run test:coverage:instrument",
-    "test:coverage:instrument": "nyc instrument src instrumented"
+    "build": "npm run test:coverage:instrument && npm run typescript:compile",
+    "test:coverage:instrument": "nyc instrument src instrumented",
+    "typescript:compile": "tsc instrumented/index.ts"
   },
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
